@@ -12,13 +12,13 @@ struct ContentView: View {
         NavigationView {
             
             TabView {
-                Text("Feed")
+                FeedView()
                     .tabItem {
                         Image(systemName: "lightbulb")
                         Text("Thought")
                     }
                 
-                Text("Search")
+                SearchView()
                     .tabItem {
                         Image(systemName: "magnifyingglass")
                         Text("Search")
@@ -30,7 +30,7 @@ struct ContentView: View {
                         Text("Connect")
                     }
             }
-            .navigationBarTitle("Thought")
+            .navigationBarTitle("Thoughts")
             .navigationBarTitleDisplayMode(.inline)
             
         }
