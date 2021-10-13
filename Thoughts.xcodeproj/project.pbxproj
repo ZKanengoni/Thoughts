@@ -30,6 +30,10 @@
 		CCEF69ED2713E159008F418C /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69EC2713E159008F418C /* FilterButtonView.swift */; };
 		CCEF69F0271718FC008F418C /* NewThoughtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69EF271718FB008F418C /* NewThoughtsView.swift */; };
 		CCEF69F627172039008F418C /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69F527172039008F418C /* TextArea.swift */; };
+		CCEF69F927172BBB008F418C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69F827172BBB008F418C /* LoginView.swift */; };
+		CCEF69FB27172BF3008F418C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69FA27172BF3008F418C /* SignupView.swift */; };
+		CCEF69FD27172E68008F418C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69FC27172E68008F418C /* CustomTextField.swift */; };
+		CCEF69FF27173629008F418C /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69FE27173629008F418C /* CustomSecureField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		CCEF69EC2713E159008F418C /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		CCEF69EF271718FB008F418C /* NewThoughtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThoughtsView.swift; sourceTree = "<group>"; };
 		CCEF69F527172039008F418C /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		CCEF69F827172BBB008F418C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CCEF69FA27172BF3008F418C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		CCEF69FC27172E68008F418C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CCEF69FE27173629008F418C /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 		CCDF10FF270DDD1100CD784F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF69F727172B98008F418C /* Authentication */,
 				CCEF69EE271718CD008F418C /* Thoughts */,
 				CCEF69E32713DFBE008F418C /* Profile */,
 				CCDF110B270DFB0D00CD784F /* Messages */,
@@ -186,8 +195,19 @@
 			isa = PBXGroup;
 			children = (
 				CCEF69F527172039008F418C /* TextArea.swift */,
+				CCEF69FC27172E68008F418C /* CustomTextField.swift */,
+				CCEF69FE27173629008F418C /* CustomSecureField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CCEF69F727172B98008F418C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF69F827172BBB008F418C /* LoginView.swift */,
+				CCEF69FA27172BF3008F418C /* SignupView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +286,9 @@
 				CCDF1102270DDD8E00CD784F /* FeedView.swift in Sources */,
 				CCEF69E92713E113008F418C /* ProfileHeaderView.swift in Sources */,
 				CCDF1115270E2FD600CD784F /* ChatView.swift in Sources */,
+				CCEF69FF27173629008F418C /* CustomSecureField.swift in Sources */,
 				CCDF110D270DFC6F00CD784F /* ConversationsView.swift in Sources */,
+				CCEF69F927172BBB008F418C /* LoginView.swift in Sources */,
 				CCEF69F0271718FC008F418C /* NewThoughtsView.swift in Sources */,
 				CCEF69ED2713E159008F418C /* FilterButtonView.swift in Sources */,
 				CCDF10F0270BA67C00CD784F /* ThoughtsApp.swift in Sources */,
@@ -278,8 +300,10 @@
 				CCEF69E52713DFDB008F418C /* UserProfileView.swift in Sources */,
 				CCDF1104270DE43000CD784F /* ThoughtCell.swift in Sources */,
 				CCDF1108270DEFAE00CD784F /* SearchBar.swift in Sources */,
+				CCEF69FD27172E68008F418C /* CustomTextField.swift in Sources */,
 				CCEF69E02713D9BC008F418C /* MessageView.swift in Sources */,
 				CCDF110A270DF3DF00CD784F /* UserCell.swift in Sources */,
+				CCEF69FB27172BF3008F418C /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
