@@ -24,6 +24,7 @@ struct UserCell: View {
                 Text("Childish Gambion")
                     .font(.system(size: 14))
             }
+            .foregroundColor(.black)
         }
     }
 }

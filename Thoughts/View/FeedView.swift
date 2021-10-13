@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedView: View {
+    @State var isShowingNewThoughtView = false
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
@@ -18,7 +19,7 @@ struct FeedView: View {
                 }.padding()
             }
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action:  { isShowingNewThoughtView.toggle() }, label: {
                 Image("brains")
                     .resizable()
                     .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
@@ -29,6 +30,9 @@ struct FeedView: View {
             .foregroundColor(.white)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .padding()
+            .fullScreenCover(isPresented: $isShowingNewThoughtView) {
+               NewThoughtsView(isPresented: $isShowingNewThoughtView)
+            }
         }
     }
 }

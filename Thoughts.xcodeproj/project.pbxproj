@@ -16,6 +16,20 @@
 		CCDF1106270DEF0800CD784F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1105270DEF0800CD784F /* SearchView.swift */; };
 		CCDF1108270DEFAE00CD784F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1107270DEFAE00CD784F /* SearchBar.swift */; };
 		CCDF110A270DF3DF00CD784F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1109270DF3DF00CD784F /* UserCell.swift */; };
+		CCDF110D270DFC6F00CD784F /* ConversationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF110C270DFC6F00CD784F /* ConversationsView.swift */; };
+		CCDF110F270DFCA400CD784F /* ConversationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF110E270DFCA400CD784F /* ConversationsCell.swift */; };
+		CCDF1113270E2E7E00CD784F /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1112270E2E7E00CD784F /* MessageInputView.swift */; };
+		CCDF1115270E2FD600CD784F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1114270E2FD600CD784F /* ChatView.swift */; };
+		CCDF1117270E36E000CD784F /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1116270E36E000CD784F /* ChatBubble.swift */; };
+		CCDF1119270F1EAB00CD784F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1118270F1EAB00CD784F /* Message.swift */; };
+		CCEF69E02713D9BC008F418C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69DF2713D9BC008F418C /* MessageView.swift */; };
+		CCEF69E22713DAA1008F418C /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69E12713DAA1008F418C /* NewMessageView.swift */; };
+		CCEF69E52713DFDB008F418C /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69E42713DFDB008F418C /* UserProfileView.swift */; };
+		CCEF69E92713E113008F418C /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69E82713E113008F418C /* ProfileHeaderView.swift */; };
+		CCEF69EB2713E134008F418C /* ProfileActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69EA2713E134008F418C /* ProfileActionView.swift */; };
+		CCEF69ED2713E159008F418C /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69EC2713E159008F418C /* FilterButtonView.swift */; };
+		CCEF69F0271718FC008F418C /* NewThoughtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69EF271718FB008F418C /* NewThoughtsView.swift */; };
+		CCEF69F627172039008F418C /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69F527172039008F418C /* TextArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +44,20 @@
 		CCDF1105270DEF0800CD784F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CCDF1107270DEFAE00CD784F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		CCDF1109270DF3DF00CD784F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		CCDF110C270DFC6F00CD784F /* ConversationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
+		CCDF110E270DFCA400CD784F /* ConversationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsCell.swift; sourceTree = "<group>"; };
+		CCDF1112270E2E7E00CD784F /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
+		CCDF1114270E2FD600CD784F /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		CCDF1116270E36E000CD784F /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		CCDF1118270F1EAB00CD784F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CCEF69DF2713D9BC008F418C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		CCEF69E12713DAA1008F418C /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		CCEF69E42713DFDB008F418C /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		CCEF69E82713E113008F418C /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		CCEF69EA2713E134008F418C /* ProfileActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionView.swift; sourceTree = "<group>"; };
+		CCEF69EC2713E159008F418C /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
+		CCEF69EF271718FB008F418C /* NewThoughtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThoughtsView.swift; sourceTree = "<group>"; };
+		CCEF69F527172039008F418C /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +90,10 @@
 		CCDF10EE270BA67C00CD784F /* Thoughts */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF69F227171FE0008F418C /* Utils */,
+				CCDF10FE270DDD0500CD784F /* Model */,
 				CCDF1100270DDD2200CD784F /* ViewModel */,
 				CCDF10FF270DDD1100CD784F /* View */,
-				CCDF10FE270DDD0500CD784F /* Model */,
 				CCDF10EF270BA67C00CD784F /* ThoughtsApp.swift */,
 				CCDF10F3270BA68300CD784F /* Assets.xcassets */,
 				CCDF10F8270BA68300CD784F /* Info.plist */,
@@ -84,6 +113,7 @@
 		CCDF10FE270DDD0500CD784F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CCDF1118270F1EAB00CD784F /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +121,8 @@
 		CCDF10FF270DDD1100CD784F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCEF69EE271718CD008F418C /* Thoughts */,
+				CCEF69E32713DFBE008F418C /* Profile */,
 				CCDF110B270DFB0D00CD784F /* Messages */,
 				CCDF10F1270BA67C00CD784F /* ContentView.swift */,
 				CCDF1101270DDD8D00CD784F /* FeedView.swift */,
@@ -112,8 +144,50 @@
 		CCDF110B270DFB0D00CD784F /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				CCDF110C270DFC6F00CD784F /* ConversationsView.swift */,
+				CCDF1112270E2E7E00CD784F /* MessageInputView.swift */,
+				CCDF110E270DFCA400CD784F /* ConversationsCell.swift */,
+				CCDF1114270E2FD600CD784F /* ChatView.swift */,
+				CCDF1116270E36E000CD784F /* ChatBubble.swift */,
+				CCEF69DF2713D9BC008F418C /* MessageView.swift */,
+				CCEF69E12713DAA1008F418C /* NewMessageView.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		CCEF69E32713DFBE008F418C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF69E42713DFDB008F418C /* UserProfileView.swift */,
+				CCEF69E82713E113008F418C /* ProfileHeaderView.swift */,
+				CCEF69EA2713E134008F418C /* ProfileActionView.swift */,
+				CCEF69EC2713E159008F418C /* FilterButtonView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CCEF69EE271718CD008F418C /* Thoughts */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF69EF271718FB008F418C /* NewThoughtsView.swift */,
+			);
+			path = Thoughts;
+			sourceTree = "<group>";
+		};
+		CCEF69F227171FE0008F418C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF69F427172003008F418C /* Views */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CCEF69F427172003008F418C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCEF69F527172039008F418C /* TextArea.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +260,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCDF1106270DEF0800CD784F /* SearchView.swift in Sources */,
+				CCEF69F627172039008F418C /* TextArea.swift in Sources */,
+				CCDF1113270E2E7E00CD784F /* MessageInputView.swift in Sources */,
 				CCDF10F2270BA67C00CD784F /* ContentView.swift in Sources */,
 				CCDF1102270DDD8E00CD784F /* FeedView.swift in Sources */,
+				CCEF69E92713E113008F418C /* ProfileHeaderView.swift in Sources */,
+				CCDF1115270E2FD600CD784F /* ChatView.swift in Sources */,
+				CCDF110D270DFC6F00CD784F /* ConversationsView.swift in Sources */,
+				CCEF69F0271718FC008F418C /* NewThoughtsView.swift in Sources */,
+				CCEF69ED2713E159008F418C /* FilterButtonView.swift in Sources */,
 				CCDF10F0270BA67C00CD784F /* ThoughtsApp.swift in Sources */,
+				CCDF1117270E36E000CD784F /* ChatBubble.swift in Sources */,
+				CCDF110F270DFCA400CD784F /* ConversationsCell.swift in Sources */,
+				CCEF69EB2713E134008F418C /* ProfileActionView.swift in Sources */,
+				CCEF69E22713DAA1008F418C /* NewMessageView.swift in Sources */,
+				CCDF1119270F1EAB00CD784F /* Message.swift in Sources */,
+				CCEF69E52713DFDB008F418C /* UserProfileView.swift in Sources */,
 				CCDF1104270DE43000CD784F /* ThoughtCell.swift in Sources */,
 				CCDF1108270DEFAE00CD784F /* SearchBar.swift in Sources */,
+				CCEF69E02713D9BC008F418C /* MessageView.swift in Sources */,
 				CCDF110A270DF3DF00CD784F /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
