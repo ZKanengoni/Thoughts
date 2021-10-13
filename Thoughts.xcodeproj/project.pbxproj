@@ -34,6 +34,7 @@
 		CCEF69FB27172BF3008F418C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69FA27172BF3008F418C /* SignupView.swift */; };
 		CCEF69FD27172E68008F418C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69FC27172E68008F418C /* CustomTextField.swift */; };
 		CCEF69FF27173629008F418C /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF69FE27173629008F418C /* CustomSecureField.swift */; };
+		CCEF6A0127176DB3008F418C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF6A0027176DB3008F418C /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		CCEF69FA27172BF3008F418C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		CCEF69FC27172E68008F418C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CCEF69FE27173629008F418C /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		CCEF6A0027176DB3008F418C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				CCEF69F527172039008F418C /* TextArea.swift */,
 				CCEF69FC27172E68008F418C /* CustomTextField.swift */,
 				CCEF69FE27173629008F418C /* CustomSecureField.swift */,
+				CCEF6A0027176DB3008F418C /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				CCEF69F0271718FC008F418C /* NewThoughtsView.swift in Sources */,
 				CCEF69ED2713E159008F418C /* FilterButtonView.swift in Sources */,
 				CCDF10F0270BA67C00CD784F /* ThoughtsApp.swift in Sources */,
+				CCEF6A0127176DB3008F418C /* ImagePicker.swift in Sources */,
 				CCDF1117270E36E000CD784F /* ChatBubble.swift in Sources */,
 				CCDF110F270DFCA400CD784F /* ConversationsCell.swift in Sources */,
 				CCEF69EB2713E134008F418C /* ProfileActionView.swift in Sources */,

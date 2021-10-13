@@ -13,16 +13,42 @@ struct SignupView: View {
     @State var password = ""
     @State var fullname = ""
     @State var username = ""
+    @State var showImagePicker = false
+    @State var selectedUIImage: UIImage?
+    @State var image: Image?
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    func loadImage() {
+        guard let selectedImage = selectedUIImage else { return }
+        image = Image(uiImage: selectedImage)
+    }
     var body: some View {
         ZStack {
             VStack {
-                Image("photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 220, height:120)
-                    .padding(.top, 160)
-                    .padding(.bottom, 40)
+                Button(action: { showImagePicker.toggle() }, label: {
+                    ZStack {
+                        if let image = image {
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 220, height:120)
+                                .clipped()
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .padding(.top, 160)
+                                .padding(.bottom, 40)
+                        } else {
+                            Image("photo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 220, height:120)
+                                .padding(.top, 160)
+                                .padding(.bottom, 40)
+                        }
+                    }
+                }).sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                    ImagePicker(image: $selectedUIImage)
+                })
+               
                 
 //                Text("Thoughts")
 //                    .font(.system(size: 40.0))
