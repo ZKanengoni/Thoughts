@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeaderView: View {
+    @State var slectedFilter: ThoughtFilterOptions = .thoughts
+    @Binding var isFollowed: Bool
+    let viewModel: ProfileViewModel
+    
     var body: some View {
         VStack {
-            Image("user")
+            KFImage(URL(string: viewModel.user.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .clipped()
@@ -18,10 +23,10 @@ struct ProfileHeaderView: View {
                 .cornerRadius(120 / 2)
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             
-            Text("Unknown User")
+            Text(viewModel.user.fullname)
                 .font(.system(size: 20, weight: .semibold))
             
-            Text("@UnknownUser")
+            Text("@\(viewModel.user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .padding(.top, 1)
@@ -52,15 +57,11 @@ struct ProfileHeaderView: View {
                 }
             }.padding()
             
-            ProfileActionView(isCurrentUser: false)
-            
+            ProfileActionView(viewModel: viewModel, isFollowed: $isFollowed)
+        
             Spacer()
         }
     }
 }
 
-struct ProfileHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderView()
-    }
-}
+

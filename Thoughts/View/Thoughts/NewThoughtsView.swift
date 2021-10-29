@@ -6,20 +6,30 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct NewThoughtsView: View {
     @Binding var isPresented: Bool
     @State var captionText: String = ""
+    @ObservedObject var viewModel: UploadThoughtViewModel
+    
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+        self.viewModel = UploadThoughtViewModel(isPresented: isPresented)
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
                 HStack(alignment: .top) {
-                    Image("user")
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .frame(width: 64, height: 64)
-                        .cornerRadius(32)
+                    if let user = AuthViewModel.shared.user {
+                        KFImage(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .frame(width: 64, height: 64)
+                            .cornerRadius(32)
+                    }
                     
                     TextArea("What's going on? Share a thought...", text: $captionText)
                     
@@ -31,7 +41,9 @@ struct NewThoughtsView: View {
                     Text("Cancel")
                         .foregroundColor(Color(.systemIndigo))
                 })
-                    , trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                , trailing: Button(action: {
+                    viewModel.uploadThought(caption: captionText)
+                }, label: {
                         Text("Share")
                             .padding(.horizontal)
                             .padding(.vertical, 8)

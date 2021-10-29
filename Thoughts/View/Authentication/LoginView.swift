@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State var email = ""
     @State var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -26,7 +27,7 @@ struct LoginView: View {
     //                    .font(.system(size: 40.0))
     //                    .foregroundColor(.white)
     //                    .padding(.bottom, 20)
-                    
+                
                     VStack(spacing: 20){
                         CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
                             .padding()
@@ -56,7 +57,9 @@ struct LoginView: View {
                     }
                     
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        viewModel.login(withEmail: email, password: password)
+                    }, label: {
                         Text("Login")
                             .font(.headline)
                             .foregroundColor(Color(.systemIndigo))
@@ -65,6 +68,35 @@ struct LoginView: View {
                             .clipShape(Capsule())
                             .padding()
                     })
+                   
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     Spacer()
                     
@@ -96,3 +128,5 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+

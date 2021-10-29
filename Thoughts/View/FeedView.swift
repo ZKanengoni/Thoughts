@@ -9,12 +9,17 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewThoughtView = false
+    @ObservedObject var viewModel = FeedViewModel()
+    
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
-                VStack {
-                    ForEach(0..<10) { _ in
-                       ThoughtCell()
+                LazyVStack {
+                    ForEach(viewModel.thoughts) { thought in
+                        NavigationLink(destination: ThoughtDetailView(thought: thought)) {
+                            ThoughtCell(thought: thought)
+                        }
                     }
                 }.padding()
             }

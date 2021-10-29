@@ -1,0 +1,81 @@
+//
+//  ProfileViewModel.swift
+//  Thoughts
+//
+//  Created by Zivai Kanengomi on 2021/10/14.
+//
+
+import Foundation
+import Firebase
+
+class ProfileViewModel: ObservableObject {
+    let user: User
+    @Published var isFollowed = false
+    @Published var userThoughts = [Thought]()
+    @Published var likedThoughts = [Thought]()
+    
+    init(user: User) {
+        self.user = user
+        checkIFUserIsFollowed()
+        getUserThought()
+        fetchLikedThoughts()
+    }
+   
+    
+    func follow() {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        let followingRef = COLLECTION_FOLLOWING.document(currentUid).collection("user-following")
+        let followersRef = COLLECTION_FOLLOWERS.document(user.id).collection("user-followers")
+        
+        followingRef.document(currentUid).collection("user-following").document(user.id).setData([:]) { _ in
+            followersRef.document(currentUid).setData([:]) { _ in
+                self.isFollowed  = true
+            }
+        }
+    }
+    
+    func unfollow() {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        let followingRef = COLLECTION_FOLLOWING.document(currentUid).collection("user-following")
+        let followersRef = COLLECTION_FOLLOWERS.document(user.id).collection("user-followers")
+        
+        followingRef.document(user.id).delete() { _ in
+            followersRef.document(currentUid).delete { _ in
+                self.isFollowed = false
+            }
+        }
+    }
+    
+    func checkIFUserIsFollowed() {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        let followingRef = COLLECTION_FOLLOWING.document(currentUid).collection("user-following")
+        
+        followingRef.document(user.id).getDocument {snapshot, _ in
+            guard let isFollowed = snapshot?.exists else { return }
+            self.isFollowed = isFollowed
+        }
+    }
+    
+    func getUserThought() {
+        COLLECTION_THOUGHTS.whereField("uid", isEqualTo: user.id).getDocuments { snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            self.userThoughts = documents.map({ Thought(dictionary: $0.data()) })
+        }
+    }
+    
+    func fetchLikedThoughts() {
+        COLLECTION_USERS.document(user.id).collection("user-likes").getDocuments { snapshot , _ in
+            guard let documents = snapshot?.documents else { return }
+            let thoughtIDs = documents.map({ $0.documentID })
+            
+            thoughtIDs.forEach { id in
+                COLLECTION_THOUGHTS.document(id).getDocument { snapshot, _ in
+                    guard let data = snapshot?.data() else { return }
+                    let thought = Thought(dictionary: data)
+                    
+                    print("DEBUG: Liked thoughts is \(thought)")
+                }
+            }
+        }
+    }
+}
