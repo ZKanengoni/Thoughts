@@ -22,4 +22,4 @@ When opening *Thought* will be greeted with some users thoughts on your home pag
 
 You can navigate to the search section and view other user on the application. In the search section you'll be able to find and follow users as well as view what each user has shared on their feed.
 
-Users can also view and eit their own profiles and remove their 
+Users can also view and eit their own profiles and remove their.
