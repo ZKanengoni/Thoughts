@@ -36,6 +36,8 @@ struct ThoughtCell: View {
                     
                     Text(thought.caption)
                         .foregroundColor(.black)
+                    
+                    KFImage(URL(string: thought.thoughtImageUrl))
                 }
                 .padding(.bottom)
                 .padding(.trailing)

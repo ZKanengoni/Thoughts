@@ -10,7 +10,6 @@ import Kingfisher
 
 struct ProfileHeaderView: View {
     @State var slectedFilter: ThoughtFilterOptions = .thoughts
-    @Binding var isFollowed: Bool
     let viewModel: ProfileViewModel
     
     var body: some View {
@@ -36,7 +35,7 @@ struct ProfileHeaderView: View {
             
             HStack(spacing: 50) {
                 VStack {
-                    Text("0")
+                    Text("\(viewModel.user.stats.following)")
                         .font(.system(size: 16))
                         .bold()
                     
@@ -47,7 +46,7 @@ struct ProfileHeaderView: View {
                 }
                 
                 VStack {
-                    Text("0")
+                    Text("\(viewModel.user.stats.followers)")
                         .font(.system(size: 16))
                         .bold()
                     
@@ -57,7 +56,9 @@ struct ProfileHeaderView: View {
                 }
             }.padding()
             
-            ProfileActionView(viewModel: viewModel, isFollowed: $isFollowed)
+            ProfileActionView(viewModel: viewModel)
+            
+           
         
             Spacer()
         }

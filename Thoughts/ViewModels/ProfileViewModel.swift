@@ -9,8 +9,7 @@ import Foundation
 import Firebase
 
 class ProfileViewModel: ObservableObject {
-    let user: User
-    @Published var isFollowed = false
+    @Published var user: User
     @Published var userThoughts = [Thought]()
     @Published var likedThoughts = [Thought]()
     
@@ -21,7 +20,15 @@ class ProfileViewModel: ObservableObject {
         fetchLikedThoughts()
     }
    
-    
+    func thoughts(forFilter filter: ThoughtFilterOptions) -> [Thought] {
+        switch filter {
+        case .thoughts: return userThoughts
+        case .likes: return likedThoughts
+        }
+    }
+}
+
+extension ProfileViewModel {
     func follow() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
         let followingRef = COLLECTION_FOLLOWING.document(currentUid).collection("user-following")
@@ -29,7 +36,7 @@ class ProfileViewModel: ObservableObject {
         
         followingRef.document(currentUid).collection("user-following").document(user.id).setData([:]) { _ in
             followersRef.document(currentUid).setData([:]) { _ in
-                self.isFollowed  = true
+                self.user.isFollowed  = true
             }
         }
     }
@@ -41,18 +48,19 @@ class ProfileViewModel: ObservableObject {
         
         followingRef.document(user.id).delete() { _ in
             followersRef.document(currentUid).delete { _ in
-                self.isFollowed = false
+                self.user.isFollowed = false
             }
         }
     }
     
     func checkIFUserIsFollowed() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        guard !user.isCurrentUser else { return }
         let followingRef = COLLECTION_FOLLOWING.document(currentUid).collection("user-following")
         
         followingRef.document(user.id).getDocument {snapshot, _ in
             guard let isFollowed = snapshot?.exists else { return }
-            self.isFollowed = isFollowed
+            self.user.isFollowed = isFollowed
         }
     }
     
@@ -64,6 +72,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     func fetchLikedThoughts() {
+        var thoughts = [Thought]()
         COLLECTION_USERS.document(user.id).collection("user-likes").getDocuments { snapshot , _ in
             guard let documents = snapshot?.documents else { return }
             let thoughtIDs = documents.map({ $0.documentID })
@@ -72,9 +81,27 @@ class ProfileViewModel: ObservableObject {
                 COLLECTION_THOUGHTS.document(id).getDocument { snapshot, _ in
                     guard let data = snapshot?.data() else { return }
                     let thought = Thought(dictionary: data)
+                    thoughts.append(thought)
+                    guard thoughts.count == thoughtIDs.count else { return }
                     
-                    print("DEBUG: Liked thoughts is \(thought)")
+                    self.likedThoughts = thoughts
                 }
+            }
+        }
+    }
+    
+    func fetchUserStats() {
+       let followersRef = COLLECTION_FOLLOWERS.document(user.id).collection("user-followers")
+        let followingRef = COLLECTION_FOLLOWERS.document(user.id).collection("user-following")
+        
+        
+        followersRef.getDocuments { snapshot, _ in
+            guard let followerCount = snapshot?.documents.count else { return }
+            
+            followingRef.getDocuments { snapshot, _ in
+                guard let followingCount = snapshot?.documents.count else { return }
+                
+                self.user.stats = UserStats(followers: followerCount, following: followingCount)
             }
         }
     }

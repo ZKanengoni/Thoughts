@@ -47,7 +47,7 @@ struct ThoughtAction: View {
             Spacer()
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Image(systemName: "bookmark")
+                Image(systemName: "remove")
                     .font(.system(size: 16))
                     .frame(width: 32, height: 32)
             })

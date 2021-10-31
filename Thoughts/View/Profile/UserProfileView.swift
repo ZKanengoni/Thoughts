@@ -10,6 +10,7 @@ import SwiftUI
 struct UserProfileView: View {
     let user: User
     @ObservedObject var viewModel: ProfileViewModel
+    @State var selectedFilter: ThoughtFilterOptions = .thoughts
    
     init(user: User) {
         self.user = user
@@ -19,16 +20,19 @@ struct UserProfileView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView(isFollowed: $viewModel.isFollowed, viewModel: viewModel)
+                ProfileHeaderView(viewModel: viewModel)
                     .padding()
                 
+                FilterButtonView(selectedOption: $selectedFilter)
+                    .padding()
                 
-                ForEach(viewModel.userThoughts) { thought in
+                ForEach(viewModel.thoughts(forFilter: selectedFilter)) { thought in
                     ThoughtCell(thought: thought)
+                        .padding()
                 }
             }
             
-            .navigationTitle("UnknownUser")
+            .navigationTitle(user.username)
         }
     }
 }

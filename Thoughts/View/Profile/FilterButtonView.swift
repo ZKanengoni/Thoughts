@@ -9,13 +9,11 @@ import SwiftUI
 
 enum ThoughtFilterOptions: Int, CaseIterable {
     case thoughts
-    case replies
     case likes
     
     var title: String {
         switch self {
         case .thoughts: return "Thoughts"
-        case . replies: return "Replies"
         case .likes: return "Likes"
         }
     }

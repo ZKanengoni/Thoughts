@@ -11,6 +11,7 @@ struct  Thought: Identifiable {
     let id: String
     let username: String
     let profileImageUrl: String
+    let thoughtImageUrl: String
     let fullname: String
     let caption: String
     let likes: Int
@@ -21,6 +22,7 @@ struct  Thought: Identifiable {
         self.id = dictionary["id"] as? String ?? ""
         self.username = dictionary["username"] as? String ?? ""
         self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
+        self.thoughtImageUrl = dictionary["thoughtImageUrl"] as? String ?? ""
         self.fullname = dictionary["fullname"] as? String ?? ""
         self.caption = dictionary["caption"] as? String ?? ""
         self.likes = dictionary["likes"] as? Int ?? 0
