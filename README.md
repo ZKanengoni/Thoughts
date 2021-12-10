@@ -1,7 +1,7 @@
 # Table of contents
 1. [Introduction](#Intro)
-- [About Thoughts](#About the project)
-2. [Built With](#Built With)
+- [About Thoughts](#About)
+2. [Built With](#Built)
 3. [Usage](#Usage)
 
 
@@ -9,13 +9,13 @@
 
 Thoughts is a Swift and Firebase social media application that allows user to share thier thougths and ideas with other *Thought* users.  
 
-## About the project
+## About
 
 Thoughts is a iOS Application built with Swift and Firebase. Thoughts allows users to share their thoughts and ideas with others on the platform. 
 
 Users are able to follow each other and view each others profiles and shared thoughts.
 
-## Built With
+## Built
 
 The application was built using:
 
