@@ -1,5 +1,11 @@
+# Table of contents
+1. [Introduction](#Intro)
+- [About Thoughts](#About the project)
+2. [Built With](#Built With)
+3. [Usage](#Usage)
 
-# Thoughts
+
+## Thoughts
 
 Thoughts is a Swift and Firebase social media application that allows user to share thier thougths and ideas with other *Thought* users.  
 
